@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>List All user</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+ rel="stylesheet"></link>
+
+</head>
+
+<body>
+	<div class="generic-container">
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<span class="lead">User Messages</span>
+			</div>
+			&nbsp; <br></br>
+		<div class="panel-body">
+			<table class="table table-striped">
+					<tr>
+						<th>Name</th>
+						<th>Messages</th>
+						<th>Received Date</th>
+					</tr>
+				  <tr th:each="users : ${users}">
+					  <td th:text="${users.user.username}"></td>
+	                  <td th:text="${users.messageInfo}"></td>
+	                  <td th:text="${users.date}"></td>
+                 </tr>
+              </table>
+              <div class="btn btn-sm btn-success mycustom_btn2"  onClick="javascript:clickinner(this);">Send Message</div>            
+			</div>
+		</div>	 
+	</div>
+<script>
+function clickinner(target) { // Target refers to the clicked element
+    location.href='/';
+};
+</script>
+</body>
+</html>
